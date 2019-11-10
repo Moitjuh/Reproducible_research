@@ -119,7 +119,7 @@ answer a question on daily level. Missing value are ignored.
 
     print(hist)
 
-![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](figure-markdown_strict/unnamed-chunk-4-1.png)
 
 #### 1.1 Mean and Median Number of Steps Taken each day
 
