@@ -108,7 +108,7 @@ answer a question on daily level. Missing value are ignored.
     ##  9 2012-10-09       12811
     ## 10 2012-10-10        9900
 
-    hist <- ggplot(data_daily, aes(x = total_steps)) +
+    ggplot(data_daily, aes(x = total_steps)) +
       geom_histogram(bins = 10, 
                      ## setting colors so that the bars become clear
                      col = "darkgreen", 
@@ -117,7 +117,7 @@ answer a question on daily level. Missing value are ignored.
            x = "Steps Per Day") +
       theme_bw()
 
-    print(hist)
+    
 
 ![](figure-markdown_strict/unnamed-chunk-4-1.png)
 
@@ -161,13 +161,12 @@ This question requires the number of steps to be aggreated by interval.
 In order to see the average pattern of daily activity across intervals,
 a time series plot is made.
 
-    time_series <- ggplot(data_interval, aes(x = interval, y = mean_steps)) +
+    ggplot(data_interval, aes(x = interval, y = mean_steps)) +
       geom_line(size = 1,
                 col = "darkgreen")+
       theme_bw()
-    print(time_series)
 
-![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](figure-markdown_strict/unnamed-chunk-8-1.png)
 
 #### Which 5-minute interval contains the maximum number of steps?
 
@@ -185,9 +184,9 @@ There are a number of days/intervals where there are missing values
 calculations or summaries of the data. The plot below gives an
 indication of the missigness pattern.
 
-    print(md.pattern(data))
+    md.pattern(data)
 
-![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](figure-markdown_strict/unnamed-chunk-10-1.png)
 
     ##       date interval steps     
     ## 15264    1        1     1    0
@@ -279,7 +278,7 @@ So first the steps per day are calculated.
 
 Next a histogram is plotted to see the frequency of the steps per day.
 
-    hist_imp <- ggplot(data_imputed_daily, aes(x = total_steps)) +
+    ggplot(data_imputed_daily, aes(x = total_steps)) +
       geom_histogram(bins = 10, 
                      ## setting colors so that the bars become clear
                      col = "darkgreen", 
@@ -287,9 +286,8 @@ Next a histogram is plotted to see the frequency of the steps per day.
       labs(title = "Histogram: Total Number of Steps Per Day",
            x = "Steps Per Day") +
       theme_bw()
-    print(hist_imp)
-
-![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-14-1.png)
+    
+![](figure-markdown_strict/unnamed-chunk-14-1.png)
 
 #### Mean and Median Number of Steps Taken each day in the Imputed Data
 
@@ -325,7 +323,7 @@ Next a histogram is plotted to see the frequency of the steps per day.
     ##  9 0      2012-10-01       40 Monday  Weekday
     ## 10 1.47   2012-10-01       45 Monday  Weekday
 
-    plot <- week_vs_weekend %>% 
+    week_vs_weekend %>% 
       group_by(Weekend, interval) %>% 
       summarise(mean_steps = mean(steps)) %>% 
       ggplot(aes(x = interval, y = mean_steps)) + 
@@ -336,6 +334,5 @@ Next a histogram is plotted to see the frequency of the steps per day.
            x= "Interval", 
            y = "Mean Steps")+
       theme_bw()
-    print(plot)
 
-![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-18-1.png)
+![](figure-markdown_strict/unnamed-chunk-18-1.png)
