@@ -119,7 +119,7 @@ answer a question on daily level. Missing value are ignored.
 
     print(hist)
 
-![](Reproducible-Research-Course-Project-1_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-4-1.png)
 
 #### 1.1 Mean and Median Number of Steps Taken each day
 
@@ -167,7 +167,7 @@ a time series plot is made.
       theme_bw()
     print(time_series)
 
-![](Reproducible-Research-Course-Project-1_files/figure-markdown_strict/unnamed-chunk-8-1.png)
+![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-8-1.png)
 
 #### Which 5-minute interval contains the maximum number of steps?
 
@@ -187,7 +187,7 @@ indication of the missigness pattern.
 
     print(md.pattern(data))
 
-![](Reproducible-Research-Course-Project-1_files/figure-markdown_strict/unnamed-chunk-10-1.png)
+![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-10-1.png)
 
     ##       date interval steps     
     ## 15264    1        1     1    0
@@ -289,7 +289,7 @@ Next a histogram is plotted to see the frequency of the steps per day.
       theme_bw()
     print(hist_imp)
 
-![](Reproducible-Research-Course-Project-1_files/figure-markdown_strict/unnamed-chunk-14-1.png)
+![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-14-1.png)
 
 #### Mean and Median Number of Steps Taken each day in the Imputed Data
 
@@ -338,4 +338,4 @@ Next a histogram is plotted to see the frequency of the steps per day.
       theme_bw()
     print(plot)
 
-![](Reproducible-Research-Course-Project-1_files/figure-markdown_strict/unnamed-chunk-18-1.png)
+![](Reproducible_Research/figure-markdown_strict/unnamed-chunk-18-1.png)
