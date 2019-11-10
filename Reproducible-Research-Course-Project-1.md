@@ -117,7 +117,7 @@ head(data_daily, 10)
 
 
 ```r
-ggplot(data_daily, aes(x = total_steps)) +
+hist <- ggplot(data_daily, aes(x = total_steps)) +
   geom_histogram(bins = 10, 
                  ## setting colors so that the bars become clear
                  col = "darkgreen", 
@@ -125,6 +125,8 @@ ggplot(data_daily, aes(x = total_steps)) +
   labs(title = "Histogram: Total Number of Steps Per Day",
        x = "Steps Per Day") +
   theme_bw()
+
+print(hist)
 ```
 
 ![](Reproducible-Research-Course-Project-1_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
@@ -185,10 +187,11 @@ In order to see the average pattern of daily activity across intervals, a time s
 
 
 ```r
-ggplot(data_interval, aes(x = interval, y = mean_steps)) +
+time_series <- ggplot(data_interval, aes(x = interval, y = mean_steps)) +
   geom_line(size = 1,
             col = "darkgreen")+
   theme_bw()
+print(time_series)
 ```
 
 ![](Reproducible-Research-Course-Project-1_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
@@ -213,7 +216,7 @@ There are a number of days/intervals where there are missing values (coded as NA
 
 
 ```r
-md.pattern(data)
+print(md.pattern(data))
 ```
 
 ![](Reproducible-Research-Course-Project-1_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
@@ -319,7 +322,7 @@ head(data_daily, 10)
 Next a histogram is plotted to see the frequency of the steps per day.
 
 ```r
-ggplot(data_imputed_daily, aes(x = total_steps)) +
+hist_imp <- ggplot(data_imputed_daily, aes(x = total_steps)) +
   geom_histogram(bins = 10, 
                  ## setting colors so that the bars become clear
                  col = "darkgreen", 
@@ -327,6 +330,7 @@ ggplot(data_imputed_daily, aes(x = total_steps)) +
   labs(title = "Histogram: Total Number of Steps Per Day",
        x = "Steps Per Day") +
   theme_bw()
+print(hist_imp)
 ```
 
 ![](Reproducible-Research-Course-Project-1_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
@@ -381,7 +385,7 @@ head(week_vs_weekend, 10)
 
 
 ```r
-week_vs_weekend %>% 
+plot <- week_vs_weekend %>% 
   group_by(Weekend, interval) %>% 
   summarise(mean_steps = mean(steps)) %>% 
   ggplot(aes(x = interval, y = mean_steps)) + 
@@ -392,6 +396,7 @@ week_vs_weekend %>%
        x= "Interval", 
        y = "Mean Steps")+
   theme_bw()
+print(plot)
 ```
 
 ![](Reproducible-Research-Course-Project-1_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
